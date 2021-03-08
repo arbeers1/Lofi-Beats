@@ -48,11 +48,39 @@ namespace Lofi_Beats
                 new MusicNode(i);
             }
 
+            RuleSet2 = new int[3, 35];
+            for(int i = 40; i < 75; i++)
+            {
+                RuleSet2[0, i] = i;
+                RuleSet2[1, i] = r.Next(40, 75);
+                RuleSet2[2, i] = r.Next(40, 75);
+                new MusicNode(i);
+            }
+
         }
 
-        public static int[] LookUp(int target)
+        /// <summary>
+        /// Looks up the rules for a given MusicNode. ie the two Nodes which are related to the target node.
+        /// </summary>
+        /// <param name="target">target to search, 0-74</param>
+        /// <exception cref="ArgumentException">Throws when target is outside bounds</exception>
+        /// <returns>MusicNode[] of size 2</returns>
+        public static MusicNode[] LookUpRules(int target)
         {
-            return null;
+           if(target < 0 || target > 74)
+            {
+                throw new ArgumentException();
+            }
+            MusicNode[] list;
+           if(target < 40)
+            {
+               list = new MusicNode[] {MusicNode.MusicList[RuleSet1[1, target]], MusicNode.MusicList[RuleSet1[2, target]] };
+            }
+            else
+            {
+                list = new MusicNode[] { MusicNode.MusicList[RuleSet2[1, target]], MusicNode.MusicList[RuleSet2[2, target]] };
+            }
+            return list;
         }
 
     }

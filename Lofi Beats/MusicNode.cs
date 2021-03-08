@@ -12,7 +12,7 @@ namespace Lofi_Beats
         public Android.Media.MediaPlayer Player { get; private set; }
 
         //Pointer to next MusicNdoe
-        public static MusicNode Next { get; set; }
+        public MusicNode Next { get; set; }
 
         //Static List of all MusicNodes
         public static List<MusicNode> MusicList { get; private set; }
