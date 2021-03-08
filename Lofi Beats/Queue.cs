@@ -54,6 +54,7 @@ namespace Lofi_Beats
                 Tail = null;
             }
             Size--;
+            return temp;
         }
 
         /// <summary>
