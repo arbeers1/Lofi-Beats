@@ -4,4 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:text="@string/app_name"
+    android:gravity="center_horizontal"
+    android:textSize="30dp"/>
+<View
+    android:background="@drawable/rectangle"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_alignParentBottom="true"/>
+<ImageButton
+    android:id="@+id/playButton"
+    android:contentDescription=""
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true"
+    android:soundEffectsEnabled="false"
+    android:layout_marginBottom="5dp"
+    android:src="@android:drawable/ic_media_play"
+    android:background="@drawable/circle_button"/>
 </RelativeLayout>
