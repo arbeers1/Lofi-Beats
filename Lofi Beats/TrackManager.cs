@@ -11,6 +11,12 @@ namespace Lofi_Beats
 
         private Track Track2;
 
+        public TrackManager()
+        {
+            Track1 = new Track();
+            Track2 = new Track();
+        }
+
         /// <summary>
         /// Play Audio
         /// </summary>

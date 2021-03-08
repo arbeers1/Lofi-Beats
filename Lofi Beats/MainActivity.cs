@@ -19,22 +19,28 @@ namespace Lofi_Beats
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
+            //Generate Rules
             Rules.GenerateRules();
 
+            //Starts Audio
+            TrackManager Manager = new TrackManager();
+
             //Event Handler for Play Button
-            bool playButtonStatus = true;
-            ImageButton playBtn = FindViewById<ImageButton>(Resource.Id.playButton);
-            playBtn.Click += (sender, e) =>
+            bool PlayButtonStatus = true;
+            ImageButton PlayBtn = FindViewById<ImageButton>(Resource.Id.playButton);
+            PlayBtn.Click += (sender, e) =>
             {
-                if (playButtonStatus)
+                if (PlayButtonStatus) //Pause
                 {
-                    playBtn.SetImageResource(Android.Resource.Drawable.IcMediaPlay);
-                    playButtonStatus = !playButtonStatus;
+                    Manager.pause();
+                    PlayBtn.SetImageResource(Android.Resource.Drawable.IcMediaPlay);
+                    PlayButtonStatus = !PlayButtonStatus;
                 }
-                else
+                else //Play
                 {
-                    playBtn.SetImageResource(Android.Resource.Drawable.IcMediaPause);
-                    playButtonStatus = !playButtonStatus;
+                    Manager.play();
+                    PlayBtn.SetImageResource(Android.Resource.Drawable.IcMediaPause);
+                    PlayButtonStatus = !PlayButtonStatus;
                 }
             };
         }
