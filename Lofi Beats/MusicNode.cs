@@ -1,19 +1,33 @@
 ﻿
+using System.Collections.Generic;
+
 namespace Lofi_Beats
 {
     public class MusicNode
     {
-        public int Id { get; }
+        //Id, and location in List
+        public int Id { get; private set; }
 
-        public Android.Media.MediaPlayer Player { get; }
+        //Audio File
+        public Android.Media.MediaPlayer Player { get; private set; }
 
-        public MusicNode Next { get; set; }
+        //Pointer to next MusicNdoe
+        public static MusicNode Next { get; set; }
+
+        //Static List of all MusicNodes
+        public static List<MusicNode> MusicList { get; private set; }
 
         public MusicNode(int Id)
         {
             this.Id = Id;
             Player = null;
             Next = null;
+
+            if(MusicList == null)
+            {
+                MusicList = new List<MusicNode>();
+            }
+            MusicList.Add(this);
         }
     }
 }
