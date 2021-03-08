@@ -18,6 +18,7 @@ namespace Lofi_Beats
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+            MusicNode.MainAct = this;
 
             //Generate Rules
             Rules.GenerateRules();

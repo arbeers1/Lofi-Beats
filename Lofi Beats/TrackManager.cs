@@ -13,7 +13,7 @@ namespace Lofi_Beats
 
         public TrackManager()
         {
-            //Track1 = new Track();
+            Track1 = new Track();
             //Track2 = new Track();
         }
 

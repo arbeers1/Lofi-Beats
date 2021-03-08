@@ -1,4 +1,4 @@
-﻿
+﻿using Android.Media;
 using System.Collections.Generic;
 
 namespace Lofi_Beats
@@ -9,10 +9,12 @@ namespace Lofi_Beats
         public int Id { get; private set; }
 
         //Audio File
-        public Android.Media.MediaPlayer Player { get; private set; }
+        public MediaPlayer Player { get; private set; }
 
         //Pointer to next MusicNdoe
         public MusicNode Next { get; set; }
+
+        public static MainActivity MainAct { private get; set; }
 
         //Static List of all MusicNodes
         public static List<MusicNode> MusicList { get; private set; }
@@ -20,7 +22,7 @@ namespace Lofi_Beats
         public MusicNode(int Id)
         {
             this.Id = Id;
-            Player = null;
+            Player = MediaPlayer.Create(MainAct, Resource.Raw.testSound); 
             Next = null;
 
             if(MusicList == null)
