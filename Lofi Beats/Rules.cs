@@ -1,4 +1,5 @@
 ﻿
+using Android.Util;
 using System;
 
 namespace Lofi_Beats
@@ -51,9 +52,9 @@ namespace Lofi_Beats
             RuleSet2 = new int[3, 35];
             for(int i = 40; i < 75; i++)
             {
-                RuleSet2[0, i] = i;
-                RuleSet2[1, i] = r.Next(40, 75);
-                RuleSet2[2, i] = r.Next(40, 75);
+                RuleSet2[0, i - 40] = i;
+                RuleSet2[1, i - 40] = r.Next(40, 75);
+                RuleSet2[2, i - 40] = r.Next(40, 75);
                 new MusicNode(i);
             }
 
@@ -78,7 +79,7 @@ namespace Lofi_Beats
             }
             else
             {
-                list = new MusicNode[] { MusicNode.MusicList[RuleSet2[1, target]], MusicNode.MusicList[RuleSet2[2, target]] };
+                list = new MusicNode[] { MusicNode.MusicList[RuleSet2[1, target - 40]], MusicNode.MusicList[RuleSet2[2, target - 40]] };
             }
             return list;
         }
