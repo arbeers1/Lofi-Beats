@@ -18,15 +18,22 @@ namespace Lofi_Beats
         public Track(bool type)
         {
             Random r = new Random();
+            int CurrentIndex = 0;
+            //Gets random starting index, depending on track type
             if (type)
             {
-                int CurrentIndex = r.Next(40);
-                MQueue = new Queue<MusicNode>(MusicNode.MusicList[CurrentIndex]);
-                MusicNode[] RuleList = Rules.LookUpRules(CurrentIndex);
-                MNextQueue = new Queue<MusicNode>(RuleList[0]);
-                MNextQueue.Add(RuleList[1]);
+                CurrentIndex = r.Next(40);
             }
-            
+            else
+            {
+                CurrentIndex = r.Next(40, 75);
+            }
+            //Initializes Queues
+            MQueue = new Queue<MusicNode>(MusicNode.MusicList[CurrentIndex]);
+            MusicNode[] RuleList = Rules.LookUpRules(CurrentIndex);
+            MNextQueue = new Queue<MusicNode>(RuleList[0]);
+            MNextQueue.Add(RuleList[1]);
+
         }
 
         /// <summary>
@@ -38,6 +45,10 @@ namespace Lofi_Beats
             CurrentNode.Player.Start();
         }
 
+        /// <summary>
+        /// Method called when a MusicNode Player finishes playing an audio file. Queues are updating and next audio file is selected and started.
+        /// </summary>
+        /// <param name="CurrentNode">The node which finished execution</param>
         public void NextMusic(MusicNode CurrentNode)
         {
             //Case for if queue is empty

@@ -14,8 +14,9 @@ namespace Lofi_Beats
         public TrackManager()
         {
             Track1 = new Track(true);
-            //Track2 = new Track(false);
+            Track2 = new Track(false);
             Track1.StartMusic();
+            Track2.StartMusic();
         }
 
         /// <summary>
