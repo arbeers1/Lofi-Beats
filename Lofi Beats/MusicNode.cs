@@ -26,7 +26,8 @@ namespace Lofi_Beats
 
             //Initializes the Music Player
             Player = MediaPlayer.Create(MainAct, Resource.Raw.testSound);
-            Player.Completion += (sender, e) =>{
+            Player.Completion += (sender, e) =>
+            {
                 TrackManager.Next(this);
             };
 
@@ -37,5 +38,5 @@ namespace Lofi_Beats
             }
             MusicList.Add(this);
         }
-    }
+    } 
 }
