@@ -22,10 +22,16 @@ namespace Lofi_Beats
         public MusicNode(int Id)
         {
             this.Id = Id;
-            Player = MediaPlayer.Create(MainAct, Resource.Raw.testSound); 
             Next = null;
 
-            if(MusicList == null)
+            //Initializes the Music Player
+            Player = MediaPlayer.Create(MainAct, Resource.Raw.testSound);
+            Player.Completion += (sender, e) =>{
+                TrackManager.Next(this);
+            };
+
+            //Loads into list
+            if (MusicList == null)
             {
                 MusicList = new List<MusicNode>();
             }

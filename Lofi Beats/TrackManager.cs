@@ -7,14 +7,15 @@ namespace Lofi_Beats
     public class TrackManager
     {
         //Tracks - Each play a single audio file at a time
-        private Track Track1;
+        private static Track Track1;
 
-        private Track Track2;
+        private static Track Track2;
 
         public TrackManager()
         {
-            Track1 = new Track();
-            //Track2 = new Track();
+            Track1 = new Track(true);
+            //Track2 = new Track(false);
+            Track1.StartMusic();
         }
 
         /// <summary>
@@ -31,6 +32,18 @@ namespace Lofi_Beats
         public void pause()
         {
 
+        }
+
+        public static void Next(MusicNode Node)
+        {
+            if(Node.Id < 40)
+            {
+                Track1.NextMusic(Node);
+            }
+            else
+            {
+                Track2.NextMusic(Node);
+            }
         }
     }
 }
