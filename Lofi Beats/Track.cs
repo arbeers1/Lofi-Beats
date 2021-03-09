@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 
 namespace Lofi_Beats
 {
@@ -29,10 +30,12 @@ namespace Lofi_Beats
                 CurrentIndex = r.Next(40, 75);
             }
             //Initializes Queues
-            MQueue = new Queue<MusicNode>(MusicNode.MusicList[CurrentIndex]);
+            MQueue = new Queue<MusicNode>();
+            MQueue.Enqueue(MusicNode.MusicList[CurrentIndex]);
             MusicNode[] RuleList = Rules.LookUpRules(CurrentIndex);
-            MNextQueue = new Queue<MusicNode>(RuleList[0]);
-            MNextQueue.Add(RuleList[1]);
+            MNextQueue = new Queue<MusicNode>();
+            MNextQueue.Enqueue(RuleList[0]);
+            MNextQueue.Enqueue(RuleList[1]);
 
         }
 
@@ -41,7 +44,7 @@ namespace Lofi_Beats
         /// </summary>
         public void StartMusic()
         {
-            MusicNode CurrentNode = MQueue.Pop();
+            MusicNode CurrentNode = MQueue.Dequeue();
             CurrentNode.Player.Start();
         }
 
@@ -52,20 +55,21 @@ namespace Lofi_Beats
         public void NextMusic(MusicNode CurrentNode)
         {
             //Case for if queue is empty
-            if (MQueue.isEmpty())
+            if (MQueue.Count == 0)
             {
                 MQueue = MNextQueue;
-                CurrentNode = MQueue.Pop();
+                CurrentNode = MQueue.Dequeue();
                 MusicNode[] RuleList = Rules.LookUpRules(CurrentNode.Id);
-                MNextQueue = new Queue<MusicNode>(RuleList[0]);
-                MNextQueue.Add(RuleList[1]);
+                MNextQueue = new Queue<MusicNode>();
+                MNextQueue.Enqueue(RuleList[0]);
+                MNextQueue.Enqueue(RuleList[1]);
             }
             else //Case for when Queue is not empty
             {
-                CurrentNode = MQueue.Pop();
+                CurrentNode = MQueue.Dequeue();
                 MusicNode[] RuleList = Rules.LookUpRules(CurrentNode.Id);
-                MNextQueue.Add(RuleList[0]);
-                MNextQueue.Add(RuleList[1]);
+                MNextQueue.Enqueue(RuleList[0]);
+                MNextQueue.Enqueue(RuleList[1]);
             }
 
             //Play new sound 
