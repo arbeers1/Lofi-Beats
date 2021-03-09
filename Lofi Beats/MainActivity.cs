@@ -44,6 +44,8 @@ namespace Lofi_Beats
                     PlayButtonStatus = !PlayButtonStatus;
                 }
             };
+
+            //System.Diagnostics.Debug.WriteLine("....." + Resources.GetIdentifier(Resources.GetResourceEntryName(n), Resources.GetResourceTypeName(n), Resources.GetResourcePackageName(n)));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
