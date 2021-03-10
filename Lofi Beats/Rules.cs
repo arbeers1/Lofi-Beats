@@ -43,8 +43,19 @@ namespace Lofi_Beats
             for(int i = 0; i < 40; i++)
             {
                 RuleSet1[0, i] = i;
-                RuleSet1[1, i] = r.Next(40);
-                RuleSet1[2, i] = r.Next(40);
+                int selected = 0;
+                //Gets random number to set as rule
+                //Do-while loop makes sure that Random number is not already selected in the first row
+                do
+                {
+                    selected = r.Next(40);
+                } while (selected == i);
+                RuleSet1[1, i] = selected;
+                do
+                {
+                    selected = r.Next(40);
+                } while (selected == i);
+                RuleSet1[2, i] = selected;
                 new MusicNode(i);
             }
 
