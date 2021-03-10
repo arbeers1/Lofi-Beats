@@ -4427,7 +4427,127 @@ namespace Lofi_Beats
 		{
 			
 			// aapt resource value: 0x7F0D0000
-			public const int testSound = 2131558400;
+			public const int a1 = 2131558400;
+			
+			// aapt resource value: 0x7F0D0001
+			public const int a10 = 2131558401;
+			
+			// aapt resource value: 0x7F0D0002
+			public const int a11 = 2131558402;
+			
+			// aapt resource value: 0x7F0D0003
+			public const int a12 = 2131558403;
+			
+			// aapt resource value: 0x7F0D0004
+			public const int a13 = 2131558404;
+			
+			// aapt resource value: 0x7F0D0005
+			public const int a14 = 2131558405;
+			
+			// aapt resource value: 0x7F0D0006
+			public const int a15 = 2131558406;
+			
+			// aapt resource value: 0x7F0D0007
+			public const int a16 = 2131558407;
+			
+			// aapt resource value: 0x7F0D0008
+			public const int a17 = 2131558408;
+			
+			// aapt resource value: 0x7F0D0009
+			public const int a18 = 2131558409;
+			
+			// aapt resource value: 0x7F0D000A
+			public const int a19 = 2131558410;
+			
+			// aapt resource value: 0x7F0D000B
+			public const int a2 = 2131558411;
+			
+			// aapt resource value: 0x7F0D000C
+			public const int a20 = 2131558412;
+			
+			// aapt resource value: 0x7F0D000D
+			public const int a21 = 2131558413;
+			
+			// aapt resource value: 0x7F0D000E
+			public const int a22 = 2131558414;
+			
+			// aapt resource value: 0x7F0D000F
+			public const int a23 = 2131558415;
+			
+			// aapt resource value: 0x7F0D0010
+			public const int a24 = 2131558416;
+			
+			// aapt resource value: 0x7F0D0011
+			public const int a25 = 2131558417;
+			
+			// aapt resource value: 0x7F0D0012
+			public const int a26 = 2131558418;
+			
+			// aapt resource value: 0x7F0D0013
+			public const int a27 = 2131558419;
+			
+			// aapt resource value: 0x7F0D0014
+			public const int a28 = 2131558420;
+			
+			// aapt resource value: 0x7F0D0015
+			public const int a29 = 2131558421;
+			
+			// aapt resource value: 0x7F0D0016
+			public const int a3 = 2131558422;
+			
+			// aapt resource value: 0x7F0D0017
+			public const int a30 = 2131558423;
+			
+			// aapt resource value: 0x7F0D0018
+			public const int a31 = 2131558424;
+			
+			// aapt resource value: 0x7F0D0019
+			public const int a32 = 2131558425;
+			
+			// aapt resource value: 0x7F0D001A
+			public const int a33 = 2131558426;
+			
+			// aapt resource value: 0x7F0D001B
+			public const int a34 = 2131558427;
+			
+			// aapt resource value: 0x7F0D001C
+			public const int a35 = 2131558428;
+			
+			// aapt resource value: 0x7F0D001D
+			public const int a36 = 2131558429;
+			
+			// aapt resource value: 0x7F0D001E
+			public const int a37 = 2131558430;
+			
+			// aapt resource value: 0x7F0D001F
+			public const int a38 = 2131558431;
+			
+			// aapt resource value: 0x7F0D0020
+			public const int a39 = 2131558432;
+			
+			// aapt resource value: 0x7F0D0021
+			public const int a4 = 2131558433;
+			
+			// aapt resource value: 0x7F0D0022
+			public const int a40 = 2131558434;
+			
+			// aapt resource value: 0x7F0D0023
+			public const int a5 = 2131558435;
+			
+			// aapt resource value: 0x7F0D0024
+			public const int a6 = 2131558436;
+			
+			// aapt resource value: 0x7F0D0025
+			public const int a7 = 2131558437;
+			
+			// aapt resource value: 0x7F0D0026
+			public const int a8 = 2131558438;
+			
+			// aapt resource value: 0x7F0D0027
+			public const int a9 = 2131558439;
+			
+			// aapt resource value: 0x7F0D0028
+			public const int testSound = 2131558440;
 			
 			static Raw()
 			{

@@ -19,6 +19,7 @@ namespace Lofi_Beats
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
             MusicNode.MainAct = this;
+            MusicNode.Resources = this.Resources;
 
             //Generate Rules
             Rules.GenerateRules();
@@ -45,7 +46,10 @@ namespace Lofi_Beats
                 }
             };
 
-            //System.Diagnostics.Debug.WriteLine("....." + Resources.GetIdentifier(Resources.GetResourceEntryName(n), Resources.GetResourceTypeName(n), Resources.GetResourcePackageName(n)));
+            /*System.Diagnostics.Debug.WriteLine(Resources.GetResourceEntryName(n));
+            System.Diagnostics.Debug.WriteLine(Resources.GetResourceTypeName(n));
+            System.Diagnostics.Debug.WriteLine(Resources.GetResourcePackageName(n));
+            System.Diagnostics.Debug.WriteLine("....." + Resources.GetIdentifier("testsound", "raw", "com.companyname.lofi_beats"));*/
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

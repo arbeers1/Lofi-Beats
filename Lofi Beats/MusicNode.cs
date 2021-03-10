@@ -1,4 +1,5 @@
-﻿using Android.Media;
+﻿using Android.Content.Res;
+using Android.Media;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,10 +16,12 @@ namespace Lofi_Beats
         //Pointer to next MusicNdoe
         public MusicNode Next { get; set; }
 
-        public static MainActivity MainAct { private get; set; }
-
         //Static List of all MusicNodes
         public static List<MusicNode> MusicList { get; private set; }
+
+        public static MainActivity MainAct { private get; set; }
+
+        public static Resources Resources { private get; set; }
 
         public MusicNode(int Id)
         {
@@ -26,7 +29,10 @@ namespace Lofi_Beats
             Next = null;
 
             //Initializes the Music Player
-            Player = MediaPlayer.Create(MainAct, Resource.Raw.testSound);
+
+            string soundId = "a" + (Id+1).ToString();
+            System.Diagnostics.Debug.WriteLine(soundId);
+            Player = MediaPlayer.Create(MainAct, Resources.GetIdentifier(soundId, "raw", "com.companyname.lofi_beats"));
             Player.Completion += (sender, e) =>
             {
                 TrackManager.Next(this);
