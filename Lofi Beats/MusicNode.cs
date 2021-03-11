@@ -31,7 +31,6 @@ namespace Lofi_Beats
             //Initializes the Music Player
 
             string soundId = "a" + (Id+1).ToString();
-            System.Diagnostics.Debug.WriteLine(soundId);
             Player = MediaPlayer.Create(MainAct, Resources.GetIdentifier(soundId, "raw", "com.companyname.lofi_beats"));
             Player.Completion += (sender, e) =>
             {
