@@ -1,4 +1,5 @@
 ﻿
+using Android.Media;
 using Java.Lang;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,13 @@ namespace Lofi_Beats
         public void StartMusic()
         {
             MusicNode CurrentNode = MQueue.Dequeue();
+            CurrentNode.Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
             CurrentNode.Player.Start();
+
+            CurrentNode.Player.Completion += (sender, e) =>
+            {
+                TrackManager.Next(CurrentNode);
+            };
         }
 
         /// <summary>
@@ -77,8 +84,13 @@ namespace Lofi_Beats
                 MNextQueue.Enqueue(RuleList[1]);
             }
             //Play new sound 
+            CurrentNode.Player = MediaPlayer.Create(MusicNode.MainAct ,CurrentNode.ResourceLocation);
             CurrentNode.Player.Start();
-            
+
+            CurrentNode.Player.Completion += (sender, e) =>
+            {
+                TrackManager.Next(CurrentNode);
+            };
         }
    }
 }

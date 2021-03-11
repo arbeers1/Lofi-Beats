@@ -11,17 +11,20 @@ namespace Lofi_Beats
         public int Id { get; private set; }
 
         //Audio File
-        public MediaPlayer Player { get; private set; }
+        public MediaPlayer Player { get; set; }
 
         //Pointer to next MusicNdoe
         public MusicNode Next { get; set; }
 
+        public int ResourceLocation { get; private set; }
+
         //Static List of all MusicNodes
         public static List<MusicNode> MusicList { get; private set; }
 
-        public static MainActivity MainAct { private get; set; }
+        public static MainActivity MainAct { get; set; }
 
         public static Resources Resources { private get; set; }
+
 
         public MusicNode(int Id)
         {
@@ -31,11 +34,8 @@ namespace Lofi_Beats
             //Initializes the Music Player
 
             string soundId = "a" + (Id+1).ToString();
-            Player = MediaPlayer.Create(MainAct, Resources.GetIdentifier(soundId, "raw", "com.companyname.lofi_beats"));
-            Player.Completion += (sender, e) =>
-            {
-                TrackManager.Next(this);
-            };
+            ResourceLocation = Resources.GetIdentifier(soundId, "raw", "com.companyname.lofi_beats");
+            Player = new MediaPlayer();
 
             //Loads into list
             if (MusicList == null)
