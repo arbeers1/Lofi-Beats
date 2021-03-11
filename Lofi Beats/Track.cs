@@ -54,6 +54,7 @@ namespace Lofi_Beats
 
             Player.Completion += (sender, e) =>
             {
+                Player.Release();
                 TrackManager.Next(CurrentNode);
             };
         }
@@ -84,9 +85,9 @@ namespace Lofi_Beats
             //Play new sound 
             Player = MediaPlayer.Create(MusicNode.MainAct ,CurrentNode.ResourceLocation);
             Player.Start();
-
             Player.Completion += (sender, e) =>
             {
+                Player.Release();
                 TrackManager.Next(CurrentNode);
             };
         }
