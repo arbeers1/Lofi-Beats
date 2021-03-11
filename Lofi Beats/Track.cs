@@ -13,12 +13,15 @@ namespace Lofi_Beats
         //Future Queue when queue finishes
         private Queue<MusicNode> MNextQueue;
 
+        private int Iterations;
+
         /// <summary>
         /// Creates a new track
         /// </summary>
         /// <param name="type">Type indicates if it is a foreground track(track 1 if true) or background track(track 2 if false)</param>
         public Track(bool type)
         {
+            Iterations = 0;
             Random r = new Random();
             int CurrentIndex = 0;
             //Gets random starting index, depending on track type
@@ -73,7 +76,6 @@ namespace Lofi_Beats
                 MNextQueue.Enqueue(RuleList[0]);
                 MNextQueue.Enqueue(RuleList[1]);
             }
-
             //Play new sound 
             CurrentNode.Player.Start();
             

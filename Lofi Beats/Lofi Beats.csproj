@@ -115,124 +115,124 @@
     <AndroidResource Include="Resources\raw\testSound.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a1.wav" />
+    <AndroidResource Include="Resources\raw\a1.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a10.wav" />
+    <AndroidResource Include="Resources\raw\a10.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a11.wav" />
+    <AndroidResource Include="Resources\raw\a11.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a12.wav" />
+    <AndroidResource Include="Resources\raw\a2.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a13.wav" />
+    <AndroidResource Include="Resources\raw\a3.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a14.wav" />
+    <AndroidResource Include="Resources\raw\a4.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a15.wav" />
+    <AndroidResource Include="Resources\raw\a5.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a16.wav" />
+    <AndroidResource Include="Resources\raw\a6.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a17.wav" />
+    <AndroidResource Include="Resources\raw\a7.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a18.wav" />
+    <AndroidResource Include="Resources\raw\a8.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a19.wav" />
+    <AndroidResource Include="Resources\raw\a9.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a2.wav" />
+    <AndroidResource Include="Resources\raw\a12.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a20.wav" />
+    <AndroidResource Include="Resources\raw\a13.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a22.wav" />
+    <AndroidResource Include="Resources\raw\a14.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a21.wav" />
+    <AndroidResource Include="Resources\raw\a15.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a23.wav" />
+    <AndroidResource Include="Resources\raw\a16.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a24.wav" />
+    <AndroidResource Include="Resources\raw\a17.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a25.wav" />
+    <AndroidResource Include="Resources\raw\a18.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a26.wav" />
+    <AndroidResource Include="Resources\raw\a19.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a27.wav" />
+    <AndroidResource Include="Resources\raw\a20.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a28.wav" />
+    <AndroidResource Include="Resources\raw\a21.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a29.wav" />
+    <AndroidResource Include="Resources\raw\a22.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a3.wav" />
+    <AndroidResource Include="Resources\raw\a23.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a30.wav" />
+    <AndroidResource Include="Resources\raw\a24.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a31.wav" />
+    <AndroidResource Include="Resources\raw\a25.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a33.wav" />
+    <AndroidResource Include="Resources\raw\a26.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a32.wav" />
+    <AndroidResource Include="Resources\raw\a27.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a34.wav" />
+    <AndroidResource Include="Resources\raw\a28.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a35.wav" />
+    <AndroidResource Include="Resources\raw\a29.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a36.wav" />
+    <AndroidResource Include="Resources\raw\a30.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a37.wav" />
+    <AndroidResource Include="Resources\raw\a31.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a38.wav" />
+    <AndroidResource Include="Resources\raw\a32.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a39.wav" />
+    <AndroidResource Include="Resources\raw\a33.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a4.wav" />
+    <AndroidResource Include="Resources\raw\a34.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a40.wav" />
+    <AndroidResource Include="Resources\raw\a35.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a6.wav" />
+    <AndroidResource Include="Resources\raw\a36.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a5.wav" />
+    <AndroidResource Include="Resources\raw\a37.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a7.wav" />
+    <AndroidResource Include="Resources\raw\a38.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a9.wav" />
+    <AndroidResource Include="Resources\raw\a39.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\raw\a8.wav" />
+    <AndroidResource Include="Resources\raw\a40.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
