@@ -64,7 +64,6 @@ namespace Lofi_Beats
         /// <param name="CurrentNode">The node which finished execution</param>
         public void NextMusic(MusicNode CurrentNode)
         {
-            System.Diagnostics.Debug.WriteLine(CurrentNode.Id);
             //Case for if queue is empty
             if (MQueue.Count == 0)
             {

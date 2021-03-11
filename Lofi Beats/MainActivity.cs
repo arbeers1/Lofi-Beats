@@ -45,11 +45,6 @@ namespace Lofi_Beats
                     PlayButtonStatus = !PlayButtonStatus;
                 }
             };
-
-            /*System.Diagnostics.Debug.WriteLine(Resources.GetResourceEntryName(n));
-            System.Diagnostics.Debug.WriteLine(Resources.GetResourceTypeName(n));
-            System.Diagnostics.Debug.WriteLine(Resources.GetResourcePackageName(n));
-            System.Diagnostics.Debug.WriteLine("....." + Resources.GetIdentifier("testsound", "raw", "com.companyname.lofi_beats"));*/
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
