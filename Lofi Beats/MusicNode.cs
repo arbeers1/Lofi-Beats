@@ -13,6 +13,7 @@ namespace Lofi_Beats
         //Pointer to next MusicNdoe
         public MusicNode Next { get; set; }
 
+        //int id associated with the audio file location in resources
         public int ResourceLocation { get; private set; }
 
         //Static List of all MusicNodes
@@ -27,8 +28,6 @@ namespace Lofi_Beats
         {
             this.Id = Id;
             Next = null;
-
-            //Initializes the Music Player
 
             string soundId = "a" + (Id+1).ToString();
             ResourceLocation = Resources.GetIdentifier(soundId, "raw", "com.companyname.lofi_beats");
