@@ -8,13 +8,14 @@ namespace Lofi_Beats
 {
     public class Track
     {
+        //Audio Player
+        private MediaPlayer Player;
+
         //Queue for Audio
         private Queue<MusicNode> MQueue;
 
         //Future Queue when queue finishes
         private Queue<MusicNode> MNextQueue;
-
-        private int Iterations;
 
         /// <summary>
         /// Creates a new track
@@ -22,7 +23,6 @@ namespace Lofi_Beats
         /// <param name="type">Type indicates if it is a foreground track(track 1 if true) or background track(track 2 if false)</param>
         public Track(bool type)
         {
-            Iterations = 0;
             Random r = new Random();
             int CurrentIndex = 0;
             //Gets random starting index, depending on track type
@@ -41,7 +41,6 @@ namespace Lofi_Beats
             MNextQueue = new Queue<MusicNode>();
             MNextQueue.Enqueue(RuleList[0]);
             MNextQueue.Enqueue(RuleList[1]);
-
         }
 
         /// <summary>
@@ -50,10 +49,10 @@ namespace Lofi_Beats
         public void StartMusic()
         {
             MusicNode CurrentNode = MQueue.Dequeue();
-            CurrentNode.Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
-            CurrentNode.Player.Start();
+            Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
+            Player.Start();
 
-            CurrentNode.Player.Completion += (sender, e) =>
+            Player.Completion += (sender, e) =>
             {
                 TrackManager.Next(CurrentNode);
             };
@@ -84,10 +83,10 @@ namespace Lofi_Beats
                 MNextQueue.Enqueue(RuleList[1]);
             }
             //Play new sound 
-            CurrentNode.Player = MediaPlayer.Create(MusicNode.MainAct ,CurrentNode.ResourceLocation);
-            CurrentNode.Player.Start();
+            Player = MediaPlayer.Create(MusicNode.MainAct ,CurrentNode.ResourceLocation);
+            Player.Start();
 
-            CurrentNode.Player.Completion += (sender, e) =>
+            Player.Completion += (sender, e) =>
             {
                 TrackManager.Next(CurrentNode);
             };
