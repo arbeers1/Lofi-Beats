@@ -97,7 +97,7 @@ namespace Lofi_Beats
             Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
             if (CurrentNode.Id > 39)
             {
-                Player.SetVolume((float) .16, (float) .16);
+                Player.SetVolume((float) .21, (float) .21);
             }
             Player.Completion += (sender, e) =>
             {
