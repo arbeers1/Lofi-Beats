@@ -51,6 +51,12 @@ namespace Lofi_Beats
 
             ImageButton RefreshBtn = FindViewById<ImageButton>(Resource.Id.refreshButton);
             RefreshBtn.SetColorFilter(Color.Argb(255,123,123,123));
+            RefreshBtn.Click += (sender, e) =>
+            {
+                System.Diagnostics.Debug.WriteLine("...............REFRESH BRUH");
+                Manager.Refresh();
+            };
+
             RefreshBtn.Touch += (sender, e) =>
             {
                 if(e.Event.Action == MotionEventActions.Down)
@@ -60,13 +66,8 @@ namespace Lofi_Beats
                 if(e.Event.Action == MotionEventActions.Up)
                 {
                     RefreshBtn.SetColorFilter(Color.Argb(255, 123, 123, 123));
+                    Manager.Refresh();
                 }
-            };
-
-            RefreshBtn.Click += (sender, e) =>
-            {
-                RefreshBtn.SetColorFilter(Color.Argb(255, 123, 123, 123));
-                //TrackManager.Refresh();
             };
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

@@ -37,5 +37,13 @@ namespace Lofi_Beats
             Track2.Pause();
         }
 
+        public void Refresh()
+        {
+            Track1.Pause(); Track2.Pause();
+            Rules.GenerateRules();
+            Track1.Reload(true);
+            Track2.Reload(false);
+        }
+
     }
 }

@@ -124,5 +124,25 @@ namespace Lofi_Beats
         {
             Player.Pause();
         }
+
+        public void Reload(bool type)
+        {
+            MQueue.Clear();
+            MNextQueue.Clear();
+            int CurrentIndex = 0;
+            if (type)
+            {
+                CurrentIndex = r.Next(40);
+            }
+            else
+            {
+                CurrentIndex = r.Next(40, 50);
+            }
+            MQueue.Enqueue(MusicNode.MusicList[CurrentIndex]);
+            MusicNode[] RuleList = Rules.LookUpRules(CurrentIndex);
+            MNextQueue.Enqueue(RuleList[0]);
+            MNextQueue.Enqueue(RuleList[1]);
+            StartMusic();
+        }
    }
 }
