@@ -82,9 +82,14 @@ namespace Lofi_Beats
             Player.Start();
         }
 
+        /// <summary>
+        /// Builds the desired MediaPlayer given a MusicNode
+        /// </summary>
+        /// <param name="CurrentNode">Node to build music player from</param>
         private void BuildPlayer(MusicNode CurrentNode)
         {
             int iterations = r.Next(1, 4);
+            Player.Release();
             Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
             if (CurrentNode.Id > 39)
             {

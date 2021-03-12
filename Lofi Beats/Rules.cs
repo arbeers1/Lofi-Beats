@@ -63,8 +63,17 @@ namespace Lofi_Beats
             for(int i = 40; i < 50; i++)
             {
                 RuleSet2[0, i - 40] = i;
-                RuleSet2[1, i - 40] = r.Next(40, 50);
-                RuleSet2[2, i - 40] = r.Next(40, 50);
+                int selected = 0;
+                do
+                {
+                    selected = r.Next(40, 50);
+                } while (selected == i);
+                RuleSet2[1, i - 40] = selected;
+                do
+                {
+                    selected = r.Next(40, 50);
+                } while (selected == i);
+                RuleSet2[2, i - 40] = selected;
                 new MusicNode(i);
             }
 
