@@ -1,6 +1,5 @@
 ﻿
 using Android.Media;
-using Java.Lang;
 using System;
 using System.Collections.Generic;
 
@@ -10,6 +9,8 @@ namespace Lofi_Beats
     {
         //Audio Player
         private MediaPlayer Player;
+
+        private Random r;
 
         //Queue for Audio
         private Queue<MusicNode> MQueue;
@@ -23,7 +24,7 @@ namespace Lofi_Beats
         /// <param name="type">Type indicates if it is a foreground track(track 1 if true) or background track(track 2 if false)</param>
         public Track(bool type)
         {
-            Random r = new Random();
+            r = new Random();
             int CurrentIndex = 0;
             //Gets random starting index, depending on track type
             if (type)
@@ -48,14 +49,24 @@ namespace Lofi_Beats
         /// </summary>
         public void StartMusic()
         {
+            int iterations = r.Next(1,4);
             MusicNode CurrentNode = MQueue.Dequeue();
             Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
             Player.Start();
 
             Player.Completion += (sender, e) =>
             {
-                Player.Release();
-                TrackManager.Next(CurrentNode);
+                iterations--;
+                if(iterations == 0)
+                {
+                    Player.Release();
+                    TrackManager.Next(CurrentNode);
+                }
+                else
+                {
+                    Player.SeekTo(0);
+                    Player.Start();
+                }
             };
         }
 
@@ -85,10 +96,20 @@ namespace Lofi_Beats
             //Play new sound 
             Player = MediaPlayer.Create(MusicNode.MainAct ,CurrentNode.ResourceLocation);
             Player.Start();
+            int iterations = r.Next(1, 4);
             Player.Completion += (sender, e) =>
             {
-                Player.Release();
-                TrackManager.Next(CurrentNode);
+                iterations--;
+                if (iterations == 0)
+                {
+                    Player.Release();
+                    TrackManager.Next(CurrentNode);
+                }
+                else
+                {
+                    Player.SeekTo(0);
+                    Player.Start();
+                }
             };
         }
    }
