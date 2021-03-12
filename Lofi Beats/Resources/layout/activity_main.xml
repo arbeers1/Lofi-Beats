@@ -26,4 +26,13 @@
     android:layout_marginBottom="5dp"
     android:src="@android:drawable/ic_media_pause"
     android:background="@drawable/circle_button"/>
+    <ImageButton
+        android:id="@+id/refreshButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@android:drawable/ic_menu_rotate"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="" />
 </RelativeLayout>
