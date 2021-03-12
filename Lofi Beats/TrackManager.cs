@@ -35,16 +35,5 @@ namespace Lofi_Beats
 
         }
 
-        public static void Next(MusicNode Node)
-        {
-            if(Node.Id < 40)
-            {
-                Track1.NextMusic(Node);
-            }
-            else
-            {
-                Track2.NextMusic(Node);
-            }
-        }
     }
 }

@@ -33,7 +33,7 @@ namespace Lofi_Beats
             }
             else
             {
-                CurrentIndex = r.Next(40, 75);
+                CurrentIndex = r.Next(40, 50);
             }
             //Initializes Queues
             MQueue = new Queue<MusicNode>();
@@ -49,32 +49,16 @@ namespace Lofi_Beats
         /// </summary>
         public void StartMusic()
         {
-            int iterations = r.Next(1,4);
             MusicNode CurrentNode = MQueue.Dequeue();
-            Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
+            BuildPlayer(CurrentNode);
             Player.Start();
-
-            Player.Completion += (sender, e) =>
-            {
-                iterations--;
-                if(iterations == 0)
-                {
-                    Player.Release();
-                    TrackManager.Next(CurrentNode);
-                }
-                else
-                {
-                    Player.SeekTo(0);
-                    Player.Start();
-                }
-            };
         }
 
         /// <summary>
         /// Method called when a MusicNode Player finishes playing an audio file. Queues are updating and next audio file is selected and started.
         /// </summary>
         /// <param name="CurrentNode">The node which finished execution</param>
-        public void NextMusic(MusicNode CurrentNode)
+        private void NextMusic(MusicNode CurrentNode)
         {
             //Case for if queue is empty
             if (MQueue.Count == 0)
@@ -94,16 +78,25 @@ namespace Lofi_Beats
                 MNextQueue.Enqueue(RuleList[1]);
             }
             //Play new sound 
-            Player = MediaPlayer.Create(MusicNode.MainAct ,CurrentNode.ResourceLocation);
+            BuildPlayer(CurrentNode);
             Player.Start();
+        }
+
+        private void BuildPlayer(MusicNode CurrentNode)
+        {
             int iterations = r.Next(1, 4);
+            Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
+            if (CurrentNode.Id > 39)
+            {
+                Player.SetVolume((float) .1, (float) .1);
+            }
             Player.Completion += (sender, e) =>
             {
                 iterations--;
                 if (iterations == 0)
                 {
                     Player.Release();
-                    TrackManager.Next(CurrentNode);
+                    NextMusic(CurrentNode);
                 }
                 else
                 {
