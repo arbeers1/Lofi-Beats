@@ -3,6 +3,9 @@ using Android.OS;
 using Android.Widget;
 using Android.Runtime;
 using AndroidX.AppCompat.App;
+using AndroidX.Core.Content;
+using Android.Graphics;
+using Android.Views;
 
 namespace Lofi_Beats
 {
@@ -44,6 +47,26 @@ namespace Lofi_Beats
                     PlayBtn.SetImageResource(Android.Resource.Drawable.IcMediaPause);
                     PlayButtonStatus = !PlayButtonStatus;
                 }
+            };
+
+            ImageButton RefreshBtn = FindViewById<ImageButton>(Resource.Id.refreshButton);
+            RefreshBtn.SetColorFilter(Color.Argb(255,123,123,123));
+            RefreshBtn.Touch += (sender, e) =>
+            {
+                if(e.Event.Action == MotionEventActions.Down)
+                {
+                    RefreshBtn.SetColorFilter(Color.Argb(255, 255, 255, 255));
+                }
+                if(e.Event.Action == MotionEventActions.Up)
+                {
+                    RefreshBtn.SetColorFilter(Color.Argb(255, 123, 123, 123));
+                }
+            };
+
+            RefreshBtn.Click += (sender, e) =>
+            {
+                RefreshBtn.SetColorFilter(Color.Argb(255, 123, 123, 123));
+                //TrackManager.Refresh();
             };
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
