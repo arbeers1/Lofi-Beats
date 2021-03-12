@@ -59,14 +59,14 @@ namespace Lofi_Beats
                 new MusicNode(i);
             }
 
-            /*RuleSet2 = new int[3, 35];
-            for(int i = 40; i < 75; i++)
+            RuleSet2 = new int[3, 10];
+            for(int i = 40; i < 50; i++)
             {
                 RuleSet2[0, i - 40] = i;
-                RuleSet2[1, i - 40] = r.Next(40, 75);
-                RuleSet2[2, i - 40] = r.Next(40, 75);
+                RuleSet2[1, i - 40] = r.Next(40, 50);
+                RuleSet2[2, i - 40] = r.Next(40, 50);
                 new MusicNode(i);
-            }*/
+            }
 
         }
 
