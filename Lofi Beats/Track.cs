@@ -10,7 +10,7 @@ namespace Lofi_Beats
         //Audio Player
         private MediaPlayer Player;
 
-        private Random r;
+        private readonly Random r;
 
         //Queue for Audio
         private Queue<MusicNode> MQueue;
@@ -79,6 +79,7 @@ namespace Lofi_Beats
             }
             //Play new sound 
             BuildPlayer(CurrentNode);
+            System.Diagnostics.Debug.WriteLine("..............." + CurrentNode.Id);
             Player.Start();
         }
 
@@ -96,7 +97,7 @@ namespace Lofi_Beats
             Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
             if (CurrentNode.Id > 39)
             {
-                Player.SetVolume((float) .1, (float) .1);
+                Player.SetVolume((float) .16, (float) .16);
             }
             Player.Completion += (sender, e) =>
             {
