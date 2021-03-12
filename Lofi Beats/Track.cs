@@ -89,7 +89,10 @@ namespace Lofi_Beats
         private void BuildPlayer(MusicNode CurrentNode)
         {
             int iterations = r.Next(1, 4);
-            Player.Release();
+            if(Player != null)
+            {
+                Player.Release();
+            }
             Player = MediaPlayer.Create(MusicNode.MainAct, CurrentNode.ResourceLocation);
             if (CurrentNode.Id > 39)
             {
@@ -109,6 +112,16 @@ namespace Lofi_Beats
                     Player.Start();
                 }
             };
+        }
+
+        public void Play()
+        {
+            Player.Start();
+        }
+
+        public void Pause()
+        {
+            Player.Pause();
         }
    }
 }

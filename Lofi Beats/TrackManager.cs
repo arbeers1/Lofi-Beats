@@ -24,7 +24,8 @@ namespace Lofi_Beats
         /// </summary>
         public void play()
         {
-            
+            Track1.Play();
+            Track2.Play();
         }
 
         /// <summary>
@@ -32,7 +33,8 @@ namespace Lofi_Beats
         /// </summary>
         public void pause()
         {
-
+            Track1.Pause();
+            Track2.Pause();
         }
 
     }
